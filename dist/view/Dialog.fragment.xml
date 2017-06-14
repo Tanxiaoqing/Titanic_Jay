@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="New Model" class="sapUiContentPadding" contentWidth="50%">
+		<content>
+			<VBox>
+				<HBox>
+					<Label text="Description" class="sapUiMediumMargin"></Label>
+					<Input id="newModelDesc" class="sapUiSmallMargin"></Input>
+				</HBox>
+				<HBox>
+					<Label text="Tree Number" class="sapUiMediumMargin"></Label>
+					<Input id="newModelTreeNum" class="sapUiSmallMargin"></Input>
+				</HBox>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="Close" press="onCloseDialog"/>
+		</beginButton>
+		<endButton>
+			<Button text="Save" press="onSaveNewModel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,144 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "titanic",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/TITANIC",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "titanic.view.Application",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "titanic.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true
+			},
+			"impDetails": {
+				"type": "sap.ui.model.json.JSONModel"
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "titanic.view",
+				"controlId": "splitApp",
+				"controlAggregation": "detailPages",
+				"transition": "slide",
+				"bypassed": {
+					"target": [
+						"models",
+						"welcome"
+					]
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "welcome",
+					"target": [
+						"models",
+						"welcome"
+					]
+				},
+				{
+					"pattern": "model/{id}",
+					"name": "model",
+					"target": [
+						"models",
+						"modelDetail"
+					]
+				}
+			],
+			"targets": {
+				"modelDetail": {
+					"viewName": "ModelDetail",
+					"viewLevel": 2
+				},
+				"welcome": {
+					"viewName": "Welcome",
+					"viewLevel": 0
+				},
+				"models": {
+					"viewName": "ModelList",
+					"viewLevel": 1,
+					"controlAggregation": "masterPages"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

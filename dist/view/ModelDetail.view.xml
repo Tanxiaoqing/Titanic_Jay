@@ -1,0 +1,84 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="titanic.controller.ModelDetail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>modelDetailTitle}">
+		<content>
+			<!--<List id="modelDetailList" noDataText="{i18n>modelNoData}" busyIndicatorDelay="0" items="{}">
+				<items>
+					<StandardListItem type="Active" title="{VARIABLE}"/>
+				</items>
+			</List>-->
+			<Label text="Description" class="sapUiMediumMargin"/>
+			<Label text="{DESCRIPTION}" class="sapUiMediumMargin"/>
+			<IconTabBar id="IconTabBar" expanded="true" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="Importance Details">
+						<Table id="ImpDetailsTable" items="{ }">
+							<columns>
+								<Column width="12em">
+									<Text text="VARIABLE"/>
+								</Column>
+								<Column width="12em">
+									<Text text="IMPORTANCE"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{VARIABLE}"/>
+									</cells>
+									<cells>
+										<Text text="{IMPORTANCE}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="Error Rate Details">
+						<Table id="ErrDetailsTable" items="{ }">
+							<columns>
+								<Column width="12em">
+									<Text text="TREEINDEX"/>
+								</Column>
+								<Column width="12em">
+									<Text text="ERROR_RATE"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{TREEINDEX}"/>
+									</cells>
+									<cells>
+										<Text text="{ERROR_RATE}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="Test Results">
+						<Table id="TstResultsTable" items="{ }">
+							<columns>
+								<Column width="12em">
+									<Text text="ACCURATE_RATE"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{ACCURATE_RATE}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="Test Model" icon="sap-icon://lab" press="onTestModel"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

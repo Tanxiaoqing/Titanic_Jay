@@ -1,0 +1,54 @@
+{
+	"welcomeFile": "/index.html",
+	"routes": [{
+		"path": "/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/resources"
+		},
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/test-resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/test-resources"
+		},
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/TITANIC",
+		"target": {
+			"type": "destination",
+			"name": "TITANIC"
+		},
+		"description": "TITANIC ODATA Servcie"
+	}, {
+		"path": "/TITANIC_TEST_MODEL",
+		"target": {
+			"type": "destination",
+			"name": "TITANIC_TEST_MODEL"
+		},
+		"description": "TITANIC Test Model Service"
+	}, {
+		"path": "/TITANIC_TRAIN_MODEL",
+		"target": {
+			"type": "destination",
+			"name": "TITANIC_TRAIN_MODEL"
+		},
+		"description": "TITANIC Train Model Service"
+	}],
+	"sendWelcomeFileRedirect": true,
+	"cacheControl": [{
+		"directive": "private",
+		"maxAge": 0,
+		"path": "**.html"
+	}, {
+		"directive": "private",
+		"maxAge": 0,
+		"path": "sap-ui-cachebuster-info.json"
+	}, {
+		"directive": "public",
+		"maxAge": 31536000
+	}]
+}

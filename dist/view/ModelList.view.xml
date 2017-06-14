@@ -1,0 +1,18 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="titanic.controller.ModelList"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>modelListTitle}">
+		<content>
+			<List id="modelList" noDataText="{i18n>modelNoData}" busyIndicatorDelay="0" items="{/MODELS}">
+				<items>
+					<StandardListItem type="Active" title="{DESCRIPTION}" press="onModelItemPress"/>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="Train New Model" icon="sap-icon://create" press="onNewModel"></Button>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
